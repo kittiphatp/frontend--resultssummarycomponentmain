@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,700;1,500;1,800&family=League+Spartan:wght@400;500;700&family=Open+Sans&family=Poppins:wght@200;400;800&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {font-size: 18px; font-family: 'Hanken Grotesk', sans-serif;}
+
+    .container {width: 735px; height: 514px; border-radius: 15px; margin: 283px auto 20px auto; box-shadow: 0px 10px 20px hsl(241, 100%, 89%); display: flex;}
+    
+    /* Left side */
+    header {width: 364px; height: 514px; background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%)); border-radius: 15px; color: white; display: flex; flex-direction: column; justify-content: space-around; align-items: center;}
+    .score {width: 202px; height: 202px; background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0)); border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    .score > .score-get {font-size: 58px;}
+
+    article {width: 235px; height: 127px; text-align: center;}
+    article > .score-imply {font-size: 1.5em; margin-bottom: 10px;}
+    article > .score-desc {font-family: sans-serif; font-size: 0.9em; font-weight: 500;}
+
+    .your-result {font-size: 1.2em; font-weight: 800;}
+    .your-result, .score-full, .score-desc {color: hsl(241, 100%, 89%);}
+
+
+    /* Right side */
+    main {width: 364px; height: 514px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; margin-left: 40px;}
+    .summary {color: hsl(224, 30%, 27%); font-size: 1.2em; font-weight: 800; margin-bottom: 30px;}
+
+    .group-point {width: 284px; height: 52px; display: flex; align-items: center; margin-bottom: 15px;}
+
+
+    .reaction {background-color: hsla(0, 100%, 67%, 0.2); border-radius: 10px;}
+    .memory {background-color: hsla(39, 100%, 56%, 0.2); border-radius: 10px;}
+    .verbal {background-color: hsla(166, 100%, 37%, 0.2); border-radius: 10px;}
+    .visual {background-color: hsla(234, 85%, 45%, 0.2); border-radius: 10px;}
+
+    .reaction > .name {color: hsl(0, 100%, 67%);}
+    .memory > .name {color: hsl(39, 100%, 56%);}
+    .verbal > .name {color: hsl(166, 100%, 37%);}
+    .visual > .name {color: hsl(234, 85%, 45%);}
+    
+    img, .name {margin-left: 15px;}
+    .point {width: 100%; display: flex; justify-content: flex-end; margin-right: 10px;}
+    span {margin-left: 10px; color: hsl(224, 30%, 27%)}
+
+    input {width: 286px; height: 54px; border-style: none; background-color: hsl(224, 30%, 27%); border-radius: 25px; color: white; font-weight: 700; margin-top: 30px;}
+
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 375px) {
+      .container {height: auto; display: flex; flex-direction: column; margin-top: 0px; box-shadow: none;}
+      .container, header { border-top-left-radius: 0px; border-top-right-radius: 0px;}
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <section class="container">
+    <!-- Left side -->
+    <header>
+      <h1 class="your-result">Your Result</h1>
+      <div class="score">
+        <div class="score-get">76</div>
+        <div class="score-full">of 100</div>
+      </div>
+      <article>
+        <div class="score-imply">Great</div>
+        <div class="score-desc">
+          You scored higher than 65% of the people who have taken these tests.
+        </div>
+      </article>
+    </header>
+
+    <!-- Right side -->
+    <main>
+      <h1 class="summary">Summary</h1>
+      <div class="group-point reaction">
+        <img src="assets/images/icon-reaction.svg" alt="reaction-icon">
+        <div class="name">Reaction</div>
+        <div class="point">80<span>/ 100</span></div>
+      </div>
+      <div class="group-point memory">
+        <img src="assets/images/icon-memory.svg" alt="memory-icon">
+        <div class="name">Memory</div>
+        <div class="point">92<span>/ 100</span></div>
+      </div>
+      <div class="group-point verbal">
+        <img src="assets/images/icon-verbal.svg" alt="verbal-icon">
+        <div class="name">Verbal</div>
+        <div class="point">61<span>/ 100</span></div>
+      </div>
+      <div class="group-point visual">
+        <img src="assets/images/icon-visual.svg" alt="visual-icon">
+        <div class="name">Visual</div>
+        <div class="point">72<span>/ 100</span></div>
+      </div>
+
+      <input type="button" value="Continue">
+    </main>
+  </section>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kittiphat Pisuittiporn</a>.
+  </div>
+</body>
+</html>
